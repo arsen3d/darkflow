@@ -1,3 +1,363 @@
+```
+imac5k2015:test arsen$ git clone https://github.com/arsen3d/darkflow
+Cloning into 'darkflow'...
+remote: Counting objects: 2558, done.
+remote: Total 2558 (delta 0), reused 0 (delta 0), pack-reused 2558
+Receiving objects: 100% (2558/2558), 18.69 MiB | 5.72 MiB/s, done.
+Resolving deltas: 100% (1719/1719), done.
+imac5k2015:test arsen$ cd darkflow/
+imac5k2015:darkflow arsen$ LS
+LICENSE		README.md	cfg		darkflow	flow		labels.txt	preview.png	sample_img	setup.py	test
+imac5k2015:darkflow arsen$ python3 setup.py build_ext --inplace
+Compiling darkflow/cython_utils/nms.pyx because it changed.
+Compiling darkflow/cython_utils/cy_yolo2_findboxes.pyx because it changed.
+Compiling darkflow/cython_utils/cy_yolo_findboxes.pyx because it changed.
+[1/3] Cythonizing darkflow/cython_utils/cy_yolo2_findboxes.pyx
+[2/3] Cythonizing darkflow/cython_utils/cy_yolo_findboxes.pyx
+[3/3] Cythonizing darkflow/cython_utils/nms.pyx
+running build_ext
+building 'darkflow.cython_utils.nms' extension
+creating build
+creating build/temp.macosx-10.6-intel-3.6
+creating build/temp.macosx-10.6-intel-3.6/darkflow
+creating build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils
+/usr/bin/clang -fno-strict-aliasing -Wsign-compare -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -arch i386 -arch x86_64 -g -I/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include -I/Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -c darkflow/cython_utils/nms.c -o build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/nms.o
+In file included from darkflow/cython_utils/nms.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+In file included from darkflow/cython_utils/nms.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+creating build/lib.macosx-10.6-intel-3.6
+creating build/lib.macosx-10.6-intel-3.6/darkflow
+creating build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils
+/usr/bin/clang -bundle -undefined dynamic_lookup -arch i386 -arch x86_64 -g build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/nms.o -lm -o build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/nms.cpython-36m-darwin.so
+building 'darkflow.cython_utils.cy_yolo2_findboxes' extension
+/usr/bin/clang -fno-strict-aliasing -Wsign-compare -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -arch i386 -arch x86_64 -g -I/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include -I/Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -c darkflow/cython_utils/cy_yolo2_findboxes.c -o build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo2_findboxes.o
+In file included from darkflow/cython_utils/cy_yolo2_findboxes.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+In file included from darkflow/cython_utils/cy_yolo2_findboxes.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+/usr/bin/clang -bundle -undefined dynamic_lookup -arch i386 -arch x86_64 -g build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo2_findboxes.o -lm -o build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo2_findboxes.cpython-36m-darwin.so
+building 'darkflow.cython_utils.cy_yolo_findboxes' extension
+/usr/bin/clang -fno-strict-aliasing -Wsign-compare -fno-common -dynamic -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -arch i386 -arch x86_64 -g -I/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include -I/Library/Frameworks/Python.framework/Versions/3.6/include/python3.6m -c darkflow/cython_utils/cy_yolo_findboxes.c -o build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo_findboxes.o
+In file included from darkflow/cython_utils/cy_yolo_findboxes.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+In file included from darkflow/cython_utils/cy_yolo_findboxes.c:547:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1809:
+/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: "Using deprecated NumPy API, disable it by "
+      "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-W#warnings]
+#warning "Using deprecated NumPy API, disable it by " \
+ ^
+1 warning generated.
+/usr/bin/clang -bundle -undefined dynamic_lookup -arch i386 -arch x86_64 -g build/temp.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo_findboxes.o -lm -o build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo_findboxes.cpython-36m-darwin.so
+copying build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/nms.cpython-36m-darwin.so -> darkflow/cython_utils
+copying build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo2_findboxes.cpython-36m-darwin.so -> darkflow/cython_utils
+copying build/lib.macosx-10.6-intel-3.6/darkflow/cython_utils/cy_yolo_findboxes.cpython-36m-darwin.so -> darkflow/cython_utils
+imac5k2015:darkflow arsen$ pip install -e .
+Obtaining file:///Users/arsen/test/darkflow
+Installing collected packages: darkflow
+  Found existing installation: darkflow 1.0.0
+    Uninstalling darkflow-1.0.0:
+      Successfully uninstalled darkflow-1.0.0
+  Running setup.py develop for darkflow
+Successfully installed darkflow
+imac5k2015:darkflow arsen$ pip install .
+Processing /Users/arsen/test/darkflow
+  Requirement already satisfied (use --upgrade to upgrade): darkflow==1.0.0 from file:///Users/arsen/test/darkflow in /Users/arsen/test/darkflow
+imac5k2015:darkflow arsen$ flow --h
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Example usage: flow --imgdir sample_img/ --model cfg/yolo.cfg --load bin/yolo.weights
+
+Arguments:
+  --help, --h, -h  show this super helpful message and exit
+  --imgdir         path to testing directory with images
+  --binary         path to .weights directory
+  --config         path to .cfg directory
+  --dataset        path to dataset directory
+  --labels         path to labels file
+  --backup         path to backup folder
+  --summary        path to TensorBoard summaries directory
+  --annotation     path to annotation directory
+  --threshold      detection threshold
+  --model          configuration of choice
+  --trainer        training algorithm
+  --momentum       applicable for rmsprop and momentum optimizers
+  --verbalise      say out loud while building graph
+  --train          train the whole net
+  --load           how to initialize the net? Either from .weights or a checkpoint, or even from scratch
+  --savepb         save net and weight to a .pb file
+  --gpu            how much gpu (from 0.0 to 1.0)
+  --gpuName        GPU device name
+  --lr             learning rate
+  --keep           Number of most recent training results to save
+  --batch          batch size
+  --epoch          number of epoch
+  --save           save checkpoint every ? training examples
+  --demo           demo on webcam
+  --queue          process demo in batch
+  --json           Outputs bounding box information in json format.
+  --saveVideo      Records video from input video or camera
+  --pbLoad         path to .pb protobuf file (metaLoad must also be specified)
+  --metaLoad       path to .meta file generated during --savepb that corresponds to .pb file
+
+imac5k2015:darkflow arsen$ open .
+imac5k2015:darkflow arsen$ flow --model cfg/yolo-new.cfg --load bin/yolo-new.weights --demo videofile.avi
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Traceback (most recent call last):
+  File "/Users/arsen/anaconda3/bin/flow", line 6, in <module>
+    exec(compile(open(__file__).read(), __file__, 'exec'))
+  File "/Users/arsen/test/darkflow/flow", line 6, in <module>
+    cliHandler(sys.argv)
+  File "/Users/arsen/test/darkflow/darkflow/cli.py", line 22, in cliHandler
+    tfnet = TFNet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/build.py", line 58, in __init__
+    darknet = Darknet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/dark/darknet.py", line 13, in __init__
+    self.get_weight_src(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/dark/darknet.py", line 47, in get_weight_src
+    '{} not found'.format(FLAGS.load)
+AssertionError: bin/yolo-new.weights not found
+imac5k2015:darkflow arsen$ flow --model cfg/yolo-new.cfg --load bin/yolo-new.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+/Users/arsen/test/darkflow/darkflow/dark/darknet.py:54: UserWarning: ./cfg/yolo-new.cfg not found, use cfg/yolo-new.cfg instead
+  cfg_path, FLAGS.model))
+Parsing cfg/yolo-new.cfg
+Traceback (most recent call last):
+  File "/Users/arsen/anaconda3/bin/flow", line 6, in <module>
+    exec(compile(open(__file__).read(), __file__, 'exec'))
+  File "/Users/arsen/test/darkflow/flow", line 6, in <module>
+    cliHandler(sys.argv)
+  File "/Users/arsen/test/darkflow/darkflow/cli.py", line 22, in cliHandler
+    tfnet = TFNet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/build.py", line 58, in __init__
+    darknet = Darknet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/dark/darknet.py", line 17, in __init__
+    src_parsed = self.parse_cfg(self.src_cfg, FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/dark/darknet.py", line 68, in parse_cfg
+    for i, info in enumerate(cfg_layers):
+  File "/Users/arsen/test/darkflow/darkflow/utils/process.py", line 66, in cfg_yielder
+    layers, meta = parser(model); yield meta;
+  File "/Users/arsen/test/darkflow/darkflow/utils/process.py", line 17, in parser
+    with open(model, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'cfg/yolo-new.cfg'
+imac5k2015:darkflow arsen$ flow --model cfg/yolo-new.cfg --load bin/yolo-new.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Parsing ./cfg/yolo-new.cfg
+Layer "button" aria-label not implemented
+imac5k2015:darkflow arsen$ flow --model cfg/arsen-yolo.cfg --load bin/yolo-new.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Parsing ./cfg/yolo-new.cfg
+Layer "button" aria-label not implemented
+imac5k2015:darkflow arsen$ flow --model cfg/arsen-tiny-yolo-voc.cfg --load bin/arsen-tiny-yolo-voc.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Parsing ./cfg/arsen-tiny-yolo-voc.cfg
+Parsing cfg/arsen-tiny-yolo-voc.cfg
+Loading bin/arsen-tiny-yolo-voc.weights ...
+Successfully identified 63471556 bytes
+Finished in 1.8384089469909668s
+Traceback (most recent call last):
+  File "/Users/arsen/anaconda3/bin/flow", line 6, in <module>
+    exec(compile(open(__file__).read(), __file__, 'exec'))
+  File "/Users/arsen/test/darkflow/flow", line 6, in <module>
+    cliHandler(sys.argv)
+  File "/Users/arsen/test/darkflow/darkflow/cli.py", line 22, in cliHandler
+    tfnet = TFNet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/build.py", line 64, in __init__
+    self.framework = create_framework(*args)
+  File "/Users/arsen/test/darkflow/darkflow/net/framework.py", line 59, in create_framework
+    return this(meta, FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/framework.py", line 15, in __init__
+    self.constructor(meta, FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/yolo/__init__.py", line 24, in constructor
+    ).format(meta['model'])
+AssertionError: labels.txt and cfg/arsen-tiny-yolo-voc.cfg indicate inconsistent class numbers
+imac5k2015:darkflow arsen$ flow --model cfg/arsen-tiny-yolo-voc.cfg --load bin/arsen-tiny-yolo-voc.weights --demo video.mp4
+imac5k2015:darkflow arsen$ wget https://pjreddie.com/media/files/yolo.weights
+-bash: wget: command not found
+imac5k2015:darkflow arsen$ wget https://pjreddie.com/media/files/yolo.weights
+imac5k2015:darkflow arsen$ brew wget
+brewError: Unknown command: wget
+imac5k2015:darkflow arsen$ brew install wget
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 1 tap (caskroom/cask).
+No changes to formulae.
+
+==> Installing dependencies for wget: openssl@1.1
+==> Installing wget dependency: openssl@1.1
+==> Downloading https://homebrew.bintray.com/bottles/openssl@1.1-1.1.0g.high_sierra.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring openssl@1.1-1.1.0g.high_sierra.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl@1.1/certs
+
+and run
+  /usr/local/opt/openssl@1.1/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local,
+because this is an alternate version of another formula.
+
+If you need to have this software first in your PATH run:
+  echo 'export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find this software you may need to set:
+    LDFLAGS:  -L/usr/local/opt/openssl@1.1/lib
+    CPPFLAGS: -I/usr/local/opt/openssl@1.1/include
+For pkg-config to find this software you may need to set:
+    PKG_CONFIG_PATH: /usr/local/opt/openssl@1.1/lib/pkgconfig
+
+==> Summary
+🍺  /usr/local/Cellar/openssl@1.1/1.1.0g: 6,585 files, 15.6MB
+==> Installing wget
+==> Downloading https://homebrew.bintray.com/bottles/wget-1.19.2.high_sierra.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring wget-1.19.2.high_sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/wget/1.19.2: 11 files, 1.7MB
+imac5k2015:darkflow arsen$ wget https://pjreddie.com/media/files/yolo.weights
+--2017-11-16 22:59:44--  https://pjreddie.com/media/files/yolo.weights
+Resolving pjreddie.com... 128.208.3.39
+Connecting to pjreddie.com|128.208.3.39|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 203934260 (194M) [application/octet-stream]
+Saving to: 'yolo.weights'
+
+yolo.weights                                    100%[====================================================================================================>] 194.49M  6.26MB/s    in 27s     
+
+2017-11-16 23:00:11 (7.13 MB/s) - 'yolo.weights' saved [203934260/203934260]
+
+imac5k2015:darkflow arsen$ flow --model cfg/arsen-yolo.cfg --load yolo.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Parsing ./cfg/yolo.cfg
+Parsing cfg/arsen-yolo.cfg
+Loading yolo.weights ...
+Successfully identified 203934260 bytes
+Finished in 3.713236093521118s
+Traceback (most recent call last):
+  File "/Users/arsen/anaconda3/bin/flow", line 6, in <module>
+    exec(compile(open(__file__).read(), __file__, 'exec'))
+  File "/Users/arsen/test/darkflow/flow", line 6, in <module>
+    cliHandler(sys.argv)
+  File "/Users/arsen/test/darkflow/darkflow/cli.py", line 22, in cliHandler
+    tfnet = TFNet(FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/build.py", line 64, in __init__
+    self.framework = create_framework(*args)
+  File "/Users/arsen/test/darkflow/darkflow/net/framework.py", line 59, in create_framework
+    return this(meta, FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/framework.py", line 15, in __init__
+    self.constructor(meta, FLAGS)
+  File "/Users/arsen/test/darkflow/darkflow/net/yolo/__init__.py", line 24, in constructor
+    ).format(meta['model'])
+AssertionError: labels.txt and cfg/arsen-yolo.cfg indicate inconsistent class numbers
+imac5k2015:darkflow arsen$ flow --model cfg/yolo.cfg --load yolo.weights --demo video.mp4
+/Users/arsen/anaconda3/lib/python3.6/importlib/_bootstrap.py:219: RuntimeWarning: compiletime version 3.5 of module 'tensorflow.python.framework.fast_tensor_util' does not match runtime version 3.6
+  return f(*args, **kwds)
+
+Parsing ./cfg/yolo.cfg
+Parsing cfg/yolo.cfg
+Loading yolo.weights ...
+Successfully identified 203934260 bytes
+Finished in 3.6040267944335938s
+Model has a coco model name, loading coco labels.
+
+Building net ...
+Source | Train? | Layer description                | Output size
+-------+--------+----------------------------------+---------------
+       |        | input                            | (?, 608, 608, 3)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 608, 608, 32)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 304, 304, 32)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 304, 304, 64)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 152, 152, 64)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 152, 152, 128)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 152, 152, 64)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 152, 152, 128)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 76, 76, 128)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 76, 76, 256)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 76, 76, 128)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 76, 76, 256)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 256)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 38, 38, 512)
+ Load  |  Yep!  | maxp 2x2p0_2                     | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 19, 19, 512)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | concat [16]                      | (?, 38, 38, 512)
+ Load  |  Yep!  | conv 1x1p0_1  +bnorm  leaky      | (?, 38, 38, 64)
+ Load  |  Yep!  | local flatten 2x2                | (?, 19, 19, 256)
+ Load  |  Yep!  | concat [27, 24]                  | (?, 19, 19, 1280)
+ Load  |  Yep!  | conv 3x3p1_1  +bnorm  leaky      | (?, 19, 19, 1024)
+ Load  |  Yep!  | conv 1x1p0_1    linear           | (?, 19, 19, 425)
+-------+--------+----------------------------------+---------------
+Running entirely on CPU
+2017-11-16 23:00:58.418427: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+Finished in 9.086707830429077s
+
+GVA info: Successfully connected to the Intel plugin, offline Gen75 
+Press [ESC] to quit demo
+0.884 FPS^[^[^[^[
+
+```
+
+
 ## Intro
 
 [![Build Status](https://travis-ci.org/thtrieu/darkflow.svg?branch=master)](https://travis-ci.org/thtrieu/darkflow) [![codecov](https://codecov.io/gh/thtrieu/darkflow/branch/master/graph/badge.svg)](https://codecov.io/gh/thtrieu/darkflow)
